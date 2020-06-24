@@ -1,0 +1,70 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    {% block head_grid_css %}{% endblock %}
+    {% include 'bootstrap_resource.html'%}
+
+    <title>{% block title %}Base{% endblock %}</title>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'img/shadow7.png' %}" alt="SHADOW's SITE" width="100" height="40">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarColor01" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Fundamentals<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Health</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Trending</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">More <i class="ion-ios-arrow-down"></i></a>
+              </li>
+            </ul>
+            <form class="form-inline">
+              <div class="input-group search-box">
+                <input type="text" class="form-control" placeholder="What are you looking for?" aria-label="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button"><i class="ion-search"></i></button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+          
+      </nav>
+
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+
+        {% endblock %}
+    </div>
+
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+
+
+
+
+</html>

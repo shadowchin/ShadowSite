@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+{% block head_grid_css %}
+    {#<link rel="stylesheet" href="{% static 'css/grid_main.css' %}">#}
+{% endblock %}
+
+
+{% block content %}
+Blogpost: {{object.id}}
+    <h1>{{object.title}}</h1>
+    <p>{{object.content}}</p>
+
+{% endblock %}
