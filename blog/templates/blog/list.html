@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+{% block head_grid_css %}
+    {#<link rel="stylesheet" href="{% static 'css/grid_main.css' %}">#}
+{% endblock %}
+
+
+{% block content %}
+
+    {% for obj in object_list %}
+        <li>{{obj.title}}</li>
+
+    {% endfor %}
+
+{% endblock %}
