@@ -9,7 +9,8 @@
 {% block content %}
 
     {% for obj in object_list %}
-        <li>{{obj.title}}</li>
+        {% comment %} <li><a href = '/blog/{{obj.slug}}'>{{obj.title}}</a></li> {% endcomment %}
+        <li><a href = '{{ obj.get_absolute_url }}'>{{obj.title}}</a></li>
 
     {% endfor %}
 

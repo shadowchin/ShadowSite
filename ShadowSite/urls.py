@@ -24,5 +24,10 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('blog-new/', blog_post_create_view),
 
+    path('page/', views.about_page, name='about_page'),
+    #path(r'^pages?/$', views.about_page, name='about_page'),
+    path('contact/', views.contact_page, name='contact_page'),
+    # path('page/',views.about_page),
+
 
 ]

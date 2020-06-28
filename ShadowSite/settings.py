@@ -50,6 +50,8 @@ ALLOWED_HOSTS = ['*']
 print("================ DEBUG = ", DEBUG, " ============================" )
 print("================ Pass = ", DB_PASS, " ============================" )
 
+LOGIN_URL = '/login'
+
 # Application definition
 
 INSTALLED_APPS = [

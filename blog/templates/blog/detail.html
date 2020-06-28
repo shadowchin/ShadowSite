@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Blog{% endblock %}
+{% block title %}Detail{% endblock %}
 {% block head_grid_css %}
     {#<link rel="stylesheet" href="{% static 'css/grid_main.css' %}">#}
 {% endblock %}
 
 
 {% block content %}
-Blogpost: {{object.id}}
-    <h1>{{object.title}}</h1>
-    <p>{{object.content}}</p>
+    Blogpost: {{object.title}}
+    <p>Content: {{object.content}}</p>
+
+    {% if request.user.is_staff %}
+        <a href='{{object.get_edit_url}}'>Edit</a>
+        <a href='{{object.get_delete_url}}'>Delete</a>
+    {% endif %}
 
 {% endblock %}

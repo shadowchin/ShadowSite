@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock %}
+{% block head_grid_css %}
+    
+{% endblock %}
+
+{% block content %}
+
+{% if title %}
+    <h1>{{title}}</h1>
+{% endif %}
+
+<form method="POST" action="."> {% csrf_token %}
+    {{form.as_p}}
+    <p>111</p>
+    <button type="submit">Send</button>
+</form>
+
+
+{% endblock %}
