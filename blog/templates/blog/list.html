@@ -1,17 +1,12 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Blog{% endblock %}
-{% block head_grid_css %}
-    {#<link rel="stylesheet" href="{% static 'css/grid_main.css' %}">#}
-{% endblock %}
+{% extends 'base.html' %} {% block title %}Blog{% endblock %} {% block content %}
+<div class="row">
+    <div class="card-group">
+        {% for obj in object_list %} 
+            {% include 'blog/list_inline.html' with blog_post=obj truncate=True detail=False %} 
+        
+        {% endfor %}
+    </div>
 
 
-{% block content %}
-
-    {% for obj in object_list %}
-        {% comment %} <li><a href = '/blog/{{obj.slug}}'>{{obj.title}}</a></li> {% endcomment %}
-        <li><a href = '{{ obj.get_absolute_url }}'>{{obj.title}}</a></li>
-
-    {% endfor %}
-
+</div>
 {% endblock %}

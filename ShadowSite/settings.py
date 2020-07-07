@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'blog', # Modular app
+    'searches',
 ]
 
 MIDDLEWARE = [
@@ -178,12 +179,16 @@ USE_TZ = True
 #DataFlair #Django #Static files
 STATIC_URL = '/static/'
 #--------------------------------------------------
-STATIC_ROOT = os.path.join(BASE_DIR, 'root')
+STATIC_ROOT = os.path.join(BASE_DIR, 'root') # Live CDN AWS S3 stuff can be here
 #-----------------------------------------------------
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static'),
         os.path.join(BASE_DIR, 'bootstrap'),
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 BOOTSTRAP3 = { 'theme_url':
               'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css', }

@@ -4,35 +4,28 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block head_grid_css %}{% endblock %} {% include 'bootstrap_head.html'%}
 
-
-  {% block head_grid_css %}{% endblock %}
-  {% include 'bootstrap_head.html'%}
-
-  <title>{% block title %}Base{% endblock %}</title>
+    <title>{% block title %}Base{% endblock %}</title>
 
 </head>
+
 <body>
-  {% include 'navbar.html' %}
-  
+    {% include 'navbar.html' %}
 
-  <div id="sidebar">
-    {% block sidebar %}
 
-    {% endblock %}
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="mx-auto">
-        {% block content %}{% endblock %}
-      </div>
+    <div id="sidebar">
+        {% block sidebar %} {% endblock %}
     </div>
-  </div>
 
-  {% include 'bootstrap_bottom.html'%}
+    <div class="container-fluid">
+
+        {% block content %}{% endblock %}
+
+    </div>
+
+    {% include 'bootstrap_bottom.html'%}
 </body>
 
 

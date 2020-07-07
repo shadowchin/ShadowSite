@@ -7,12 +7,17 @@
 
 
 {% block content %}
-    Blogpost: {{object.title}}
-    <p>Content: {{object.content}}</p>
-
-    {% if request.user.is_staff %}
-        <a href='{{object.get_edit_url}}'>Edit</a>
-        <a href='{{object.get_delete_url}}'>Delete</a>
+<div class="row">
+    {% include 'blog/list_inline.html' with blog_post=object truncate=False detail=True %} 
+    
+    {% if request.user.is_authenticated %}
+        {% if request.user.is_staff %}
+        <div class="col-12">
+            <a href='{{object.get_edit_url}}'>Edit</a>
+            <a href='{{object.get_delete_url}}'>Delete</a>
+        </div>
+        
+        {% endif %}
     {% endif %}
-
+</div>
 {% endblock %}

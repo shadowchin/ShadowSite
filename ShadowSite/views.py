@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from .forms import ContactForm
+from blog.models import BlogPost
 
 def home(request):
-    return render(request, 'home.html', {})
+    qs = BlogPost.objects.all()[:5] # Only select first 5 posts
+    context = {
+        'title': "Welcome to Shadow's Site",
+        'blog_list': qs,
+    }
+    return render(request, 'home.html', context)
 
 
 def about_page(request):
