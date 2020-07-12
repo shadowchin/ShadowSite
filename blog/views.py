@@ -7,7 +7,7 @@ from django.http import Http404
 from .models import BlogPost
 from .forms import BlogPostForm, BlogPostModelForm
 
-@login_required
+
 def blog_post_list_view(request):
     # List out objects
     qs = BlogPost.objects.all().published()

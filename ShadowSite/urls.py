@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from . import views
 from blog.views import *
+from searches.views import search_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home, name='home'),
     path('blog/', include('blog.urls')),
     path('blog-new/', blog_post_create_view),
+    path('search/', search_view),
 
     path('page/', views.about_page, name='about_page'),
     #path(r'^pages?/$', views.about_page, name='about_page'),
